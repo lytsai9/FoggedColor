@@ -1,0 +1,45 @@
+/*UVA10008 What's Cryptanalysis?2018/03/15
+判斷字元重複字數，並由多往少次排列，若次數依樣，則依字母順序排列*/
+import java.util.*;
+public class main{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner (System.in);
+        int a[]=new int [26];
+        int b[]=new int [26];
+        int n=sc.nextInt();
+        int count=0;
+        while(count<=n){
+        	String str =sc.nextLine();
+        	str=str.toUpperCase();
+        	
+        	for(int i=0;i<str.length();i++){
+        		if(str.charAt(i)<='Z' && str.charAt(i)>='A')
+        			a[str.charAt(i)-'A']++;
+        	}
+        	count++;
+        }
+        
+        for(int i=0;i<b.length;i++){
+        	b[i]=i;
+        }
+        
+        for(int i=0;i<a.length-1;i++){
+        	for(int j=0;j<a.length-1;j++){
+        		if(a[j]<a[j+1]){
+        			int tmp=a[j];
+        			a[j]=a[j+1];
+        			a[j+1]=tmp;
+        			int cha=b[j];
+        			b[j]=b[j+1];
+        			b[j+1]=cha;
+        		}
+        	}
+        }
+        
+        for(int i=0;i<a.length;i++){
+        	if(a[i]>0)
+        	System.out.println((char)(b[i]+'A')+" "+a[i]);
+        }
+        
+    }
+};
