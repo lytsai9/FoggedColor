@@ -1,0 +1,28 @@
+//UVA10222 Decode the mad man
+import java.util.*;
+public class UVA10222{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext()){
+        String str=sc.nextLine();
+        
+        String a="1234567890-=qwertyuiop[]asdfghjkl;'zxcvbnm,.";
+        
+        str=str.toLowerCase();
+        for(int i=0;i<str.length();i++){
+        	for(int j=0;j<a.length();j++){
+        	
+        		if(str.charAt(i)==a.charAt(j)){
+        			System.out.print(a.charAt(j-2));
+        		}
+        	
+        		if(str.charAt(i)==' '){
+        			System.out.print(" ");
+        			break;
+        		}	
+			}
+        }
+        System.out.println();
+        }
+    }
+};
