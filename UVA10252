@@ -1,0 +1,23 @@
+//UVA10252 Common permutation
+import java.util.*;
+public class UVA10252{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner (System.in);
+        while(sc.hasNext()){
+        	String s=sc.next();
+        	String a=sc.next();
+        	int z[]=new int [123];
+        	int x[]=new int [123];
+
+        	for(int i=0;i<s.length();i++)
+        		z[s.charAt(i)]++;
+        	for(int i=0;i<a.length();i++)
+        		x[a.charAt(i)]++;
+        	for(int i=97;i<=122;i++)
+        		for(int j=0;j<Math.min(z[i],x[i]);j++)
+        			System.out.print((char)(i));
+        	System.out.println();
+        }
+    }
+};
+
