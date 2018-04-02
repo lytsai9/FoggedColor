@@ -1,0 +1,30 @@
+//UVA11417 GCD
+import java.util.*;
+public class UVA11417{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        while(sc.hasNext()){
+        	int g=0;
+        	int n=sc.nextInt();
+        	if(n==0)
+        		break;
+        	else{
+        		for(int i=1;i<=n;i++){
+        			for(int j=i+1;j<=n;j++){
+        				g+=GCD(i,j);
+        			}
+        		}
+        	}
+        	System.out.println(g);
+        		
+        }
+    }
+    public static int GCD(int i,int j){
+    	if(i<j)
+    		return GCD(j,i);
+    	if(j==0)
+    		return i;
+    	else
+    		return GCD(j,i%j);
+    }
+};
