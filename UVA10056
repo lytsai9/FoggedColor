@@ -1,0 +1,20 @@
+//UVA10056 What is the probablity
+import java.util.*;
+public class UVA10056{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int c=sc.nextInt();
+        for(int i=0;i<c;i++){
+        	int n=sc.nextInt();
+        	double p=sc.nextDouble();
+        	int k=sc.nextInt();
+        	double q=1-p;
+        	double a=Math.pow(q,k-1)*p;
+        	double r=Math.pow(q,n);
+        	if(p==0)
+        		System.out.println("0.0000");
+        	else
+        		System.out.printf("%.4f\r\n",a*(1-Math.pow(r,50))/(1-r));
+        }
+    }
+};
