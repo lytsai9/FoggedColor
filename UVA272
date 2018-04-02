@@ -1,0 +1,19 @@
+//UVA272 TeX Quotes
+#include<cstdio>
+int main(){
+	char c;
+	int count=0;
+	while((c=getchar())!=EOF){
+	if(c=='"' &&count==0){
+		count++;
+		printf("``");
+	}
+	else if(c=='"' && count==1){
+		count=0;
+		printf("''");
+	}else{
+		printf("%c",c);
+	}
+	}
+	return 0;
+}
