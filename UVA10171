@@ -1,0 +1,22 @@
+//UVA10171 The Hotel with Infinite Rooms
+import java.util.*;
+public class UVA10171{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner (System.in);
+        while(sc.hasNext()){
+        	int n=sc.nextInt();
+        	long end=sc.nextLong();
+        	long count=0,i=0,max=0;
+        	i=n;
+        	while(count<end){
+        		count+=i;
+        		if(max<i){
+        			max=i;
+           		}
+           		else break;
+           		i++;
+        	}
+        	System.out.println(max);
+        }
+    }
+};
