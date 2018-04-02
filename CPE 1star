@@ -1,7 +1,7 @@
 /*UVA10008 What's Cryptanalysis?2018/03/15
 判斷字元重複字數，並由多往少次排列，若次數依樣，則依字母順序排列*/
 import java.util.*;
-public class main{
+public class UVA10008{
     public static void main(String[] args) {
         Scanner sc=new Scanner (System.in);
         int a[]=new int [26];
